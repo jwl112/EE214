@@ -1,3 +1,12 @@
 1. 원하는 범위에서 임의로 숫자 뽑기
   idxs = np.sort(np.random.choice(50, sample_size, replace=False))
-  # np.random.choice(50, sample_size, replace=False) 50사이에서 samle_size개수만큼 숫자를 랜덤으로 뽑음 
+  # np.random.choice(50, sample_size, replace=False) 50사이에서 samle_size개수만큼 숫자를 랜덤으로 뽑음 .
+
+2. 균등한 간격으로 data sample 확보하기
+  x = np.linspace(*interval, 50)
+  # *interval을 하면 (0,5) 범위를 tuple로 인식 
+
+3. model이 요구하는 input 형태에 맞게 조정하기
+  linear_model = LinearRegression()
+  linear_model.fit(x.reshape(-1,1),y)
+  #원본 데이터는 linspace로 만들어낸 1차원 (50,)짜리 array임
